@@ -1,113 +1,130 @@
-import Image from 'next/image'
+import MovieSlider from '@/components/MovieSlider'
+import MovieTrending from '@/components/MovieTrending'
+import React from 'react'
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+export const movies: Movie[] = [
+    {
+        movieName: 'Transformers: Rise of the Beasts',
+        movieImage: 'https://sportshub.cbsistatic.com/i/2023/05/08/42a26a97-714a-46c2-aefe-cbdc7721be66/transformers-rise-of-the-beasts-optimus-primal-poster.jpg',
+        resolution: '4k',
+        rating: 9.2,
+        releaseDate: 2023,
+        backgroundImage: 'https://linfotoutcourt.com/wp-content/uploads/2023/06/Rise-of-the-Beasts-01.jpeg',
+        id: 102
+    },
+    {
+        movieName: 'Retribution',
+        movieImage: 'https://m.media-amazon.com/images/M/MV5BNTEwYTMyNmUtNmU5OS00NTg2LTk4ZjEtOGJlZWViMWFlMjY1XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX1000_.jpg',
+        resolution: '4K',
+        rating: 7.6,
+        releaseDate: 2023,
+        backgroundImage: 'https://acinetvreview.com/wp-content/uploads/2023/08/Retribution-2023-movie-review.jpg',
+        id: 103
+    },
+    {
+        movieName: 'Blue Beetle',
+        movieImage: 'https://m.media-amazon.com/images/M/MV5BMmY1ODUzZGItNDllOS00MDBhLTg4NmUtYjU4YjUxMGNlYmMwXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg',
+        resolution: '4K',
+        rating: 7.6,
+        releaseDate: 2023,
+        backgroundImage: 'https://www.pixground.com/wp-content/uploads/2023/06/Blue-Beetle-4K-Wallpaper.jpg',
+        id: 104
+    },
+    {
+        movieName: 'Gran Turismo',
+        movieImage: 'https://m.media-amazon.com/images/M/MV5BMmQ3ZTViYTEtZDUwZS00NjQyLWJmODctN2JhOGVmNTQ5N2ZiXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg',
+        resolution: '4K',
+        rating: 7.6,
+        releaseDate: 2023,
+        backgroundImage: 'https://www.spieltimes.com/wp-content/uploads/2023/07/Everything-to-know-about-Gran-Turismo-movie.png',
+        id: 105
+    },
+    {
+        movieName: 'Meg 2: The Trench',
+        movieImage: 'https://m.media-amazon.com/images/M/MV5BMTM2NTU1ZTktNjc4YS00NjNhLWE4NmYtOTM2YjFjOGUzNmYzXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg',
+        resolution: 'HD',
+        rating: 7.6,
+        releaseDate: 2023,
+        backgroundImage: 'https://amc-theatres-res.cloudinary.com/v1690369380/amc-cdn/production/2/movies/69100/69112/MovieStills/330007R5.jpg',
+        id: 106
+    },
+    {
+        movieName: 'Ninja Turtles : Teenage Years',
+        movieImage: 'https://m.media-amazon.com/images/M/MV5BYzE4MTllZTktMTIyZS00Yzg1LTg1YzAtMWQwZTZkNjNkODNjXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_FMjpg_UX1000_.jpg',
+        resolution: '4K',
+        rating: 7.6,
+        releaseDate: 2023,
+        backgroundImage: 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/07/tmnt-mutant-mayhem-poster-crop.jpg',
+        id: 107
+    },
+    {
+        movieName: 'Barbie',
+        movieImage: 'https://cemamax.com/m.media-amazon.com/images/M/Barbieposter.jpg',
+        resolution: '4K',
+        rating: 7.6,
+        releaseDate: 2023,
+        backgroundImage: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/1468C/production/_130369538_barbie1.jpg',
+        id: 108
+    },
+    {
+        movieName: 'Oppenheimer',
+        movieImage: 'https://cemamax.com/m.media-amazon.com/images/M/oppenheimerposter.jpg',
+        resolution: '4K',
+        rating: 7.6,
+        releaseDate: 2023,
+        backgroundImage: 'https://universalpictures.ca/wp-content/uploads/2022/07/UniversalOPP.jpg',
+        id: 109
+    },
+    {
+        movieName: 'Miraculous: Ladybug & Cat Noir',
+        movieImage: 'https://cemamax.com/m.media-amazon.com/images/M/catposter.jpg',
+        resolution: '4K',
+        rating: 7.6,
+        releaseDate: 2023,
+        backgroundImage: 'https://www.comingsoon.net/wp-content/uploads/sites/3/2023/07/miraculous-ladybug-and-cat-noir-the-movie-still.webp',
+        id: 110
+    },
+    {
+        movieName: 'Mission: Impossible - Dead Reckoning Part One',
+        movieImage: 'https://cemamax.com/m.media-amazon.com/images/M/missionpPoster.jpg',
+        resolution: 'HD',
+        rating: 7.6,
+        releaseDate: 2023,
+        backgroundImage: 'https://www.ecranlarge.com/media/cache/1600x1200/uploads/image/001/482/mission-impossible-dead-reckoning-partie-1-photo-critique-1482777.jpg',
+        id: 111,
+        movieTrailer: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'
+    },
+    {
+        movieName: 'Spider-Man: Across the Spider-Verse',
+        movieImage: 'https://cemamax.com/m.media-amazon.com/images/M/MV5BNzQ1ODUzYjktMzRiMS00ODNiLWI4NzQtOTRiN2VlNTNmODFjXkEyXkFqcGdeQXVyMTkxNjUyNQ%40%40._V1_FMjpg_UX1000_.jpg',
+        resolution: '4K',
+        rating: 7.6,
+        releaseDate: 2023,
+        backgroundImage: 'https://cdn-uploads.gameblog.fr/img/news/427229_647def3aa5bc7.jpg',
+        id: 112,
+        movieTrailer: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'
+    },
+    {
+        movieName: 'John Wick: Chapter 4',
+        movieImage: 'https://cemamax.com/m.media-amazon.com/images/M/MV5BMDExZGMyOTMtMDgyYi00NGIwLWJhMTEtOTdkZGFjNmZiMTEwXkEyXkFqcGdeQXVyMjM4NTM5NDY%40._V1_QL75_UX380_CR0%2c0%2c380%2c562_.jpg',
+        resolution: '4K',
+        rating: 7.6,
+        releaseDate: 2023,
+        backgroundImage: 'https://blog.richersounds.com/wp-content/uploads/2023/04/review-john-wick-chapter-4-elevates-the-badass-action-franchise-to-a-new-level.jpg',
+        id: 113,
+        movieTrailer: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'
+    },
+]
+
+const page = () => {
+    return (
+        <div className='flex flex-col min-h-screen overflow-hidden font-Ibm bg-[#111111]'>
+            <MovieSlider movies={movies} />
+
+            <MovieTrending />
+
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    )
 }
+
+export default page

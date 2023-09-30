@@ -1,12 +1,13 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { IBM_Plex_Sans, Inter } from 'next/font/google'
+import { IBM_Plex_Sans } from 'next/font/google'
 
 
 const Ibm = IBM_Plex_Sans({
   subsets: ['greek'],
   weight: ['400', '500', '700'],
-  variable: '--font-Ibm'
+  variable: '--font-Ibm',
+  display: 'swap'
 })
 
 export const metadata: Metadata = {
@@ -22,12 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${Ibm.variable} font-Ibm bg-[#111111]`} >
-        {
-          children
-        }
-        {/* <main className=''>
+
+        <main className='bg-[#111111]'>
           {children}
-        </main> */}
+        </main>
 
       </body>
     </html>

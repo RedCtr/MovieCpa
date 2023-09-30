@@ -65,7 +65,7 @@ const MovieSlider = ({ movies }: { movies: Movie[] }) => {
                                 <div className='flex items-center gap-x-4'>
                                     <Badge className='px-2 py-1 rounded-md bg-sky-500 text-slate-900'>{movie.resolution}</Badge>
                                     <div className='flex items-center'>
-                                        <StarIcon className='w-3 h-3' />
+                                        <StarIcon className='w-3 h-3 text-white' />
                                         <span className='text-white text-xs md:text-sm font-semibold tracking-tighter'>{movie.rating}</span>
 
                                     </div>
@@ -73,7 +73,7 @@ const MovieSlider = ({ movies }: { movies: Movie[] }) => {
 
                                 </div>
 
-                                <Button className='w-auto px-3 py-1 md:px-4 md:py-2 mt-4 flex items-center justify-center 
+                                <Button className='w-auto px-3 py-1 md:px-4 md:py-2 mt-4 flex items-center justify-center bg-white text-[#0f172a] 
                                 gap-x-1 md:gap-x-3 hover:scale-95 transition-transform font-medium text-sm md:text-base lg:text-lg'>
                                     <PlayIcon className='w-6 h-6' />
                                     <span className=''>Watch Now</span>

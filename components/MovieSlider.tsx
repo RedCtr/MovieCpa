@@ -74,7 +74,7 @@ const MovieSlider = ({ movies }: { movies: Movie[] }) => {
                                 </div>
 
                                 <Button className='w-auto px-3 py-1 md:px-4 md:py-2 mt-4 flex items-center justify-center bg-white text-[#0f172a] 
-                                gap-x-1 md:gap-x-3 hover:scale-95 transition-transform font-medium text-sm md:text-base lg:text-lg'>
+                                gap-x-1 md:gap-x-3 hover:scale-95 hover:text-white transition-transform font-medium text-sm md:text-base lg:text-lg'>
                                     <PlayIcon className='w-6 h-6' />
                                     <span className=''>Watch Now</span>
                                 </Button>

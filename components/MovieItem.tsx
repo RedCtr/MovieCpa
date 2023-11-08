@@ -9,8 +9,8 @@ const MovieItem = ({ movie }: { movie: Movie }) => {
     return (
         <Link
             href={`/${movie.id}`}
-            className='flex flex-col items-start gap-y-1 group w-[170px] md:w-[190px] my-[6px] mr-1 cursor-pointer'>
-            <div className='w-[170px] md:w-[190px] h-[250px] md:h-[284px] relative'>
+            className='flex flex-col items-start gap-y-1 group w-[165px] md:w-[190px] my-[6px] mr-1 cursor-pointer'>
+            <div className='w-[165px] md:w-[190px] h-[250px] md:h-[284px] relative'>
                 <Image
                     className='object-cover cursor-pointer rounded-md'
                     style={{
